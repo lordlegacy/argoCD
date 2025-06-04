@@ -4,30 +4,13 @@ kind: Service
 metadata:
   labels:
     app: wordpress
-  name: wordpress2
+  name: wordpress
   namespace: argoresource
 spec:
   ports:
-  - nodePort: 32572
     port: 80
     protocol: TCP
     targetPort: 80
-  selector:
-    app: wordpress
-    tier: frontend
-  sessionAffinity: None
-  type: LoadBalancer
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: wordpress
-  namespace: argoresource
-  labels:
-    app: wordpress
-spec:
-  ports:
-    - port: 80
   selector:
     app: wordpress
     tier: frontend
