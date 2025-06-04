@@ -40,22 +40,6 @@ spec:
     tier: mysql
 ---
 apiVersion: v1
-kind: Service
-metadata:
-  name: wordpress
-  namespace: argoresource
-  labels:
-    app: wordpress
-spec:
-  ports:
-    - port: 80
-      targetPort: 80
-  selector:
-    app: wordpress
-    tier: frontend
-  type: LoadBalancer
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: wp-pv-claim
